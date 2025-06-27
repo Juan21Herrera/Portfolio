@@ -1,0 +1,36 @@
+---
+import Header from '../components/Header.jsx';
+import '@fontsource-variable/inter';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Juan Herrera | Portfolio </title>
+	</head>
+	<body>
+		<Header client:load />
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+
+	html {
+		font-familiy: 'Inter Variable', sans-serif;
+	}
+
+	body {
+		background: #0f0f1f;
+		color: #ffffff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100vh;
+	}
+</style>

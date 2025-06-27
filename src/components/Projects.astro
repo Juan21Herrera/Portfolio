@@ -1,0 +1,48 @@
+---
+const projects = [
+  {
+    title: "Clon de Spotify",
+    description:
+      "Una réplica visual de Spotify con React y Tailwind. Incluye navegación, reproductor básico y diseño responsivo.",
+    image: "/img/spotify-clone.png",
+    repo: "https://github.com/tuusuario/spotify-clone",
+    demo: "https://spotify-clone-demo.vercel.app",
+  },
+  {
+    title: "Plataforma de inversiones",
+    description:
+      "App en desarrollo para gestionar y visualizar inversiones con tablas, gráficos y formularios. Construida con React y Tailwind.",
+    image: "/img/inversiones-app.png",
+    repo: "https://github.com/tuusuario/inversiones",
+  },
+  {
+    title: "Portal de recetas",
+    description:
+      "Aplicación donde los usuarios pueden buscar, guardar y traducir recetas. Integra API externa y filtros de búsqueda.",
+    image: "/img/recetas-app.png",
+    repo: "https://github.com/tuusuario/recetas",
+  },
+];
+---
+
+<section id="projects" class="py-20 bg-[#0f0f1b] text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12">Proyectos</h2>
+
+    <div class="grid gap-10 md:grid-cols-2">
+      {projects.map(project => (
+        <div class="bg-[#181828] p-6 rounded-lg shadow-lg hover:shadow-[#fd715a]/40 transition">
+          <img src={project.image} alt={project.title} class="rounded-md mb-4" loading="lazy" />
+          <h3 class="text-xl font-semibold mb-2">{project.title}</h3>
+          <p class="text-gray-400 text-sm mb-4">{project.description}</p>
+          <div class="flex gap-4">
+            <a href={project.repo} target="_blank" class="text-[#fd715a] hover:underline text-sm">Código</a>
+            {project.demo && (
+              <a href={project.demo} target="_blank" class="text-[#fd715a] hover:underline text-sm">Demo</a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
