@@ -1,11 +1,118 @@
-<section id="stack" class="py-10 md:py-13">
-    <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-6 text-sm text-gray-300">
-        <span class="hover:text-[#fd715a] cursor-default">HTML5</span>
-        <span class="hover:text-[#fd715a] cursor-default">CSS</span>
-        <span class="hover:text-[#fd715a] cursor-default">JavaScript</span>
-        <span class="hover:text-[#fd715a] cursor-default">React</span>
-        <span class="hover:text-[#fd715a] cursor-default">Tailwind</span>
-        <span class="hover:text-[#fd715a] cursor-default">Git</span>
-        <span class="hover:text-[#fd715a] cursor-default">GitHub</span>
+---
+const tech = [
+    {
+        name: 'HTML5',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+        color: '#E34F26'
+    },
+    {
+        name: 'CSS',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+        color: '#1572B6'
+    },
+    {
+        name: 'JavaScript',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+        color: '#F7DF1E'
+    },
+    {
+        name: 'React',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        color: '#61DAFB'
+    },
+    {
+        name: 'TailwindCSS',
+        icon: '/tailwind.svg',
+        color: '#38B2AC'
+    },
+    {
+        name: 'Astro',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg',
+        color: '#FF5D01'
+    },
+    {
+        name: 'TypeScript',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+        color: '#3178C6'
+    },
+    {
+        name: 'FastAPI',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
+        color: '#009688'
+    },
+    {
+        name: 'Next.js',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+        color: '#000000'
+    },
+    {
+        name: 'PostgreSQL',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+        color: '#336791'
+    },
+    {
+        name: 'Git',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+        color: '#F05032'
+    },
+    {
+        name: 'GitHub',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+        color: '#181717'
+    }
+];
+---
+
+<section id="stack" class="py-16">
+  <main class="max-w-6xl mx-auto px-6">
+    <h2 class="text-center text-3xl font-bold text-white mb-10">Stack y Herramientas</h2>
+
+    <!-- MÓVIL: Scroll horizontal con 6 tecnologías por "pantalla" -->
+    <div class="md:hidden overflow-x-auto hide-scrollbar snap-x snap-mandatory scroll-smooth">
+      <div class="flex w-max gap-4 px-2">
+        {Array.from({ length: Math.ceil(tech.length / 6) }).map((_, pageIndex) => (
+          <div class="grid grid-cols-3 grid-rows-2 gap-x-2 gap-y-3 min-w-[300px] sm:min-w-[320px] snap-start">
+            {tech.slice(pageIndex * 6, pageIndex * 6 + 6).map((item) => (
+              <div class="bg-[#1f2c39] px-3 py-4 rounded-xl flex flex-col items-center justify-center gap-2 shadow-md hover:shadow-lg transition duration-300 w-[111px]">
+                <img
+                  src={item.icon}
+                  alt={item.name}
+                  class="w-7 h-7"
+                  style={`filter: drop-shadow(0 0 6px ${item.color});`}
+                />
+                <span class="text-gray-200 text-[11px] text-center leading-tight">{item.name}</span>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
+
+    
+
+    <!-- DESKTOP -->
+    <div class="hidden md:grid md:grid-cols-4 gap-6 mt-10">
+      {tech.map((item) => (
+        <div class="bg-[#1f2c39] px-4 py-5 rounded-xl flex flex-col items-center justify-center gap-2 shadow-md hover:shadow-lg transition duration-300">
+          <img
+            src={item.icon}
+            alt={item.name}
+            class="w-10 h-10"
+            style={`filter: drop-shadow(0 0 6px ${item.color});`}
+          />
+          <span class="text-gray-200 text-sm text-center">{item.name}</span>
+        </div>
+      ))}
+    </div>
+  </main>
 </section>
+
+<style>
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

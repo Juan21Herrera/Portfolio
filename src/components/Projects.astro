@@ -4,45 +4,100 @@ const projects = [
     title: "Clon de Spotify",
     description:
       "Una réplica visual de Spotify con React y Tailwind. Incluye navegación, reproductor básico y diseño responsivo.",
-    image: "/img/spotify-clone.png",
-    repo: "https://github.com/tuusuario/spotify-clone",
+    image: "/img/spotify.png",
+    repo: "https://github.com/Juan21Herrera/Spotify-Clon",
     demo: "https://spotify-clone-demo.vercel.app",
+    tech: ["HTML", "CSS", "JavasCript", "API"],
   },
   {
     title: "Plataforma de inversiones",
     description:
       "App en desarrollo para gestionar y visualizar inversiones con tablas, gráficos y formularios. Construida con React y Tailwind.",
-    image: "/img/inversiones-app.png",
-    repo: "https://github.com/tuusuario/inversiones",
+    image: "/img/coin.png",
+    repo: "https://github.com/Juan21Herrera/Inversionistas-Conscientes",
+    demo: "https://google.com",
+    tech: ["Next.JS", "TailwindCSS", "PostgreSQL", "API"],
   },
   {
     title: "Portal de recetas",
     description:
       "Aplicación donde los usuarios pueden buscar, guardar y traducir recetas. Integra API externa y filtros de búsqueda.",
-    image: "/img/recetas-app.png",
-    repo: "https://github.com/tuusuario/recetas",
+    image: "/img/recipe.png",
+    repo: "https://github.com/Juan21Herrera/Culinarytech",
+    demo: "https://youtube.com",
+    tech: ["React", "TailwindCSS", "PostgreSQL", "API"],
   },
 ];
 ---
 
-<section id="projects" class="py-20 bg-[#0f0f1b] text-white">
+<section id="projects" class="py-20">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-12">Proyectos</h2>
+    <h2 class="text-4xl font-bold text-center mb-16 relative">
+        Proyectos
+        <span class="block w-1 h-14 mt-6 bg-[#fd715a] mx-auto rounded-full"></span>
+        <span class="block w-1 h-1 mt-4 mx-auto rounded-full bg-[#fd715a]"></span>
+    </h2>
 
-    <div class="grid gap-10 md:grid-cols-2">
-      {projects.map(project => (
-        <div class="bg-[#181828] p-6 rounded-lg shadow-lg hover:shadow-[#fd715a]/40 transition">
-          <img src={project.image} alt={project.title} class="rounded-md mb-4" loading="lazy" />
-          <h3 class="text-xl font-semibold mb-2">{project.title}</h3>
-          <p class="text-gray-400 text-sm mb-4">{project.description}</p>
-          <div class="flex gap-4">
-            <a href={project.repo} target="_blank" class="text-[#fd715a] hover:underline text-sm">Código</a>
-            {project.demo && (
-              <a href={project.demo} target="_blank" class="text-[#fd715a] hover:underline text-sm">Demo</a>
-            )}
-          </div>
-        </div>
-      ))}
+    <div class="flex flex-col gap-20">
+        {projects.map((project, index) => (
+            <div
+                class={`flex flex-col md:flex-row ${
+                    index % 2 === 1 ? "md:flex-row-reverse" : ""
+                    } items-center gap-10`}
+            >
+                <img 
+                    src={project.image} 
+                    alt={project.title}
+                    class="w-full md:w-1/2 rounded-lg shadow-lg"
+                    loading="lazy"
+                />
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-2">{project.title}</h3>
+                    <p class="text-gray-300 text-sm mb-4">{project.description}</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        {project.tech.map((tech) => (
+                            <span class="text-sm px-5 py-1 rounded-full bg-[#18242e]">
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                    <div class="flex gap-4">
+                        <a 
+                            href={project.repo} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="px-4 py-2 bg-[#fd715a] rounded-md text-sm font-medium hover:opacity-90"
+                        >
+                            Ver GitHub
+                        </a>
+                        {project.demo && (
+                            <a 
+                            href={project.demo} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1 font-medium text-sm relative group hover:-translate-y-0.5 duration-2                            pnpm exec tailwindcss init00"
+                            >
+                                Ver demo
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="w-4 h-4 transition-transform"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path 
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                    />
+                                </svg>
+                                <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#fd715a] transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        )}
+                    </div>
+                </div>
+            </div>
+        ))}
     </div>
-  </div>
 </section>

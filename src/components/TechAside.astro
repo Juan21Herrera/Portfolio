@@ -1,0 +1,61 @@
+---
+const tech = [
+    {
+        name: 'HTML5',
+    },
+    {
+        name: 'CSS',
+    },
+    {
+        name: 'JavaScript',
+    },
+    {
+        name: 'React',
+    },
+    {
+        name: 'Tailwind CSS',
+    },
+    {
+        name: 'Git',
+    },
+    {
+        name: 'GitHub',
+    },
+    {
+        name: 'Astro',
+    },
+    {
+        name: 'FastAPI',
+    }
+];
+---
+
+<section class="py-10 mt-[60px] md:mt-[80px] bg-[#17232d] overflow-hidden">
+  <div
+    class="flex animate-[scroll-x_10s_linear_infinite] md:animate-[scroll-x_40s_linear_infinite]"
+    style="width: 200%"
+  >
+    <!-- Primer bloque -->
+    <div class="flex gap-30 text-xl md:text-[22px] text-gray-300/65 w-max">
+      {tech.map((item, index) => (
+        <div
+          class={`flex items-center gap-2 min-w-max ${index === tech.length - 1 ? 'mr-10' : ''}`}
+        >
+          <span class="text-gray-300">{item.name}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Duplicado para efecto infinito -->
+    <div class="flex gap-30 text-xl md:text-[22px] text-gray-300/65 w-max">
+      {tech.map((item, index) => (
+        <div
+          class={`flex items-center gap-2 min-w-max ${index === 0 ? 'ml-10' : ''}`}
+        >
+          <span class="text-gray-300">{item.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+

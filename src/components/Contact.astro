@@ -1,0 +1,72 @@
+---
+
+---
+
+<section id="contact" class="bg-[#121c25] text-white py-20">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+    <!-- Texto lateral -->
+    <div class="space-y-5">
+      <h3 class="text-sm text-orange-400 border-l-2 border-orange-400 pl-2">Contacto</h3>
+      <h2 class="text-4xl font-bold leading-snug">
+        ¿Tienes un proyecto?<br />
+        ¡Hablemos!
+      </h2>
+    </div>
+
+    <!-- Formulario -->
+    <form
+      action="https://formsubmit.co/juanherrera0240@gmail.com"
+      method="POST"
+      class="space-y-6"
+    >
+      <!-- Protecciones contra spam -->
+      <input type="text" name="_honey" class="hidden" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://juanh-portfolio.vercel.app/" />
+
+      <!-- Campos del formulario -->
+      <div>
+        <label for="name" class="block text-sm mb-1">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Tu nombre completo"
+          class="w-full bg-transparent border-b border-gray-400 outline-none py-1 text-sm placeholder-gray-400"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm mb-1">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="Tu email"
+          class="w-full bg-transparent border-b border-gray-400 outline-none py-1 text-sm placeholder-gray-400"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm mb-1">Mensaje</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="3"
+          required
+          placeholder="Tu mensaje"
+          class="w-full bg-transparent border-b border-gray-400 outline-none py-1 text-sm placeholder-gray-400 resize-none"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="bg-[#ef5e4e] px-6 py-2 rounded-md text-white hover:bg-[#e44b3a] transition"
+      >
+        Enviar
+      </button>
+    </form>
+  </div>
+</section>

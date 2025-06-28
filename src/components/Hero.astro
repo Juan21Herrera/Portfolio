@@ -2,13 +2,13 @@
 
 ---
 
-<main class="pt-8">
+<main class="pt-8 mt-[5px] md:mt-[40px]">
     <section class="max-w-6xl mx-auto w-full px-6 grid md:grid-cols-2 gap-8 items-center">
 
-        <!-- Texto -->
-        <div class="space-y-4">
-            <p class="text-xl text-white font-medium">Hola<span class="text-[#fd715a]">.</span></p>
-            <h2 class="text-2xl md:text-3xl text-gray-300 font-medium">Soy Juan Herrera</h2>
+        <!-- Text -->
+        <div class="space-y-4 text-center md:text-start">
+            <p class="text-2xl text-white font-medium">Hola<span class="text-[#fd715a]">.</span></p>
+            <h2 class="text-3xl md:text-4xl text-gray-300 font-medium">Soy Juan Herrera</h2>
             <h1 class="text-5xl md:text-6xl font-bold leading-tight">Desarrollador Web</h1>
 
             <div class="flex gap-4 mt-6">
@@ -23,11 +23,22 @@
 
         <!-- Imagen -->
          <div class="relative flex justify-center items-center">
-            <!-- Circulo decorativo -->
-             <div class="absolute w-72 h-72 rounded-full border-[15px] border-[#fd715a] blur-xl opacity-20 z-0"></div>
-
-            <!-- Imagen -->
-            <img src="/img/yo.png" alt="Juan Herrera photo" class="w-72 rounded-full relative z-10" />
+            <!-- Background Glow -->
+             <div
+                class="absolute w-90 h-90 rounded-full bg-[#fd715a] opacity-30 blur-3xl z-0"
+             ></div>
+            <!-- Circle Background Image -->
+             <img
+                src="/img/bg-circle.png"
+                alt="Background circle"
+                class="absolute w-[350px] md:w-[450px] z-0"
+             />
+            <!-- Profile Image -->
+            <img 
+                src="/img/yo.png" 
+                alt="Juan Herrera photo" 
+                class="w-72 rounded-full relative z-10 shadow-xl" 
+            />
          </div>
 
     </section>

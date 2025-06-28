@@ -4,8 +4,8 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="py-4 shadow-md sticky top-0 z-50 bg-[#0f0f1b] text-white">
-      <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
+    <header className="sticky top-0 z-50 bg-[#121e28]/60 backdrop-blur-md">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <h1 className="text-xl md:text-2xl font-bold">
           <a href="/" className="hover:text-[#fd715a] transition">Juan Herrera</a>
